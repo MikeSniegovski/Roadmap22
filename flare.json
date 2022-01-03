@@ -1,0 +1,241 @@
+{
+  "name": "AlterPage",
+  "children": [
+    {
+      "name": "Backend",
+      "children": [
+        {
+          "name": "Testy automatyczne",
+          "size": 10
+        },
+        {
+          "name": "Migracja na nowe PHP 8",
+          "size": 10
+        },
+        {
+          "name": "Architektura",
+          "size": 10
+        },
+        {
+          "name": "Yii3 framework",
+          "size": 10
+        },
+        {
+          "name": "Chmura",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "children": [
+        {
+          "name": "Testy automatyczne",
+          "children": [
+            {
+              "name": "Jest.js",
+              "size": 10
+            },
+            {
+              "name": "Storybook",
+              "size": 10
+            },
+            {
+              "name": "Testy integracyjne?",
+              "size": 10
+            },
+            {
+              "name": "Testowanie Reduxa",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Obsługa błędów",
+          "children": [
+            {
+              "name": "ErrorBoundary",
+              "size": 10
+            },
+            {
+              "name": "Domyślny obrazek po stronie Gatsbiego",
+              "size": 10
+            },
+            {
+              "name": "logowanie błędów",
+              "size": 10
+            },
+            {
+              "name": "Raport z najczęstszymi błędami",
+              "size": 10
+            },
+            {
+              "name": "Metody przechwytywania błędów",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Core dla frontu",
+          "children": [
+            {
+              "name": "Gatsby themes",
+              "size": 10
+            },
+            {
+              "name": "Lista pakietów",
+              "size": 10
+            },
+            {
+              "name": "Verdaccio",
+              "size": 10
+            },
+            {
+              "name": "Automatyzacja",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Next.js",
+          "size": 10
+        },
+        {
+          "name": "Migracja na Node 16 + Gatsby 4",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "name": "Design",
+      "children": [
+        {
+          "name": "UX Designer",
+          "size": 10
+        },
+        {
+          "name": "Style Guide",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "name": "DevOps",
+      "children": [
+        {
+          "name": "Docker",
+          "children": [
+            {
+              "name": "Jak działa git-submodule w kontekście naszego docker-imagesOPEN ",
+              "size": 10
+            },
+            {
+              "name": "Prywatny rejestr obrazów Dockerowych",
+              "size": 10
+            },
+            {
+              "name": "Nieupierdliwe uruchamianie testów API pod Docker'em",
+              "size": 10
+            },
+            {
+              "name": "Gdzie, do czego i kiedy chcemy lub nie mieć coś na Kubernetesie?",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Ci/Cd",
+          "children": [
+            {
+              "name": "Przygotować pilotażowo 'wspólne api-dev dla frontendów'",
+              "size": 10
+            },
+            {
+              "name": "POC: Jenkins Pipeline",
+              "size": 10
+            },
+            {
+              "name": "Jenkins ma jedno zadanie do odpalania testów na Codeception + Node",
+              "size": 10
+            },
+            {
+              "name": "Jak wersjonować nasze job’y?",
+              "size": 10
+            },
+            {
+              "name": "Jenkins potrafi szybko się przygotować do odpalania testów nowego projektu.",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Budowniczy Frontendu",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "name": "Powiększamy zespół",
+      "children": [
+        {
+          "name": "OnBoarding dla Pretendenta",
+          "size": 10
+        },
+        {
+          "name": "Employer Branding",
+          "children": [
+            {
+              "name": "Lista technologii dla nowych ludzi",
+              "size": 10
+            },
+            {
+              "name": "Ścieżka dla Juniora",
+              "size": 10
+            },
+            {
+              "name": "Blog",
+              "size": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zespół",
+      "children": [
+        {
+          "name": "Lepsze kontrakty / Dokumentacja API",
+          "size": 10
+        },
+        {
+          "name": "CodeReview checklist",
+          "size": 10
+        },
+        {
+          "name": "Redundancja uprawnień",
+          "size": 10
+        },
+        {
+          "name": "Statyczne strony z ADM",
+          "size": 10
+        },
+        {
+          "name": "Nowy panel ADM",
+          "size": 10
+        },
+        {
+          "name": "Kontrola nad logami",
+          "size": 10
+        },
+        {
+          "name": "Zmienne .env",
+          "size": 10
+        },
+        {
+          "name": "Szkolenia",
+          "size": 10
+        }
+      ]
+    }
+  ]
+}
