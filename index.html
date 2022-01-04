@@ -1,21 +1,58 @@
 <head>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/reveal.css">
+    <link rel="stylesheet" href="styles/black.css">
     <style>
         body {
             font-family: Sans-serif;
             font-size: 11px;
             margin: 0;
             padding: 0;
-            background: url("./bg.png") no-repeat;
+            background:  #000 url("./bg.png") no-repeat;
             background-size: cover;
+            display: flex;
         }
-
+        .reveal{
+            width: 50%;
+        }
+        .d3-wrapper{
+            width: 50%;
+        }
         .slice {
             cursor: pointer;
         }
 
         .slice .main-arc {
-            stroke: #fff;
-            stroke-width: 1px;
+            stroke: #000;
+            stroke-width: 5px;
+            transition: opacity 200ms;
+        }
+        .slice .main-arc:hover {
+            opacity: 0.6
+        }
+        .slice.backend .main-arc {
+            fill: #e51f7e
+        }
+
+        .slice.devops text,
+        .slice.expand text,
+        .slice.backend text {
+            fill: #fff
+        }
+        .slice .main-arc.expand {
+            fill: #e51f7e
+        }
+        .slice .main-arc.frontend {
+            fill: #fdbd39
+        }
+        .slice .main-arc.design {
+            fill: #34e3e8
+        }
+        .slice .main-arc.team {
+            fill: #34e3e8
+        }
+        .slice .main-arc.devops {
+            fill: #4a0ead
         }
 
         .slice .hidden-arc {
@@ -30,11 +67,33 @@
     </style>
 
     <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src="reveal.js"></script>
 </head>
 <body>
+<div class="d3-wrapper"></div>
+<div class="reveal">
+    <div class="slides">
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+    </div>
+</div>
+
+<section class="slide-template"></section>
+
 <script>
-  const width = window.innerWidth -20,
-    height = window.innerHeight -20,
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    // plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+  });
+</script>
+<script>
+  const width = window.innerHeight -40,
+    height = window.innerHeight -40,
     maxRadius = (Math.min(width, height) / 2) - 15;
 
   const formatNumber = d3.format(',d');
@@ -80,9 +139,11 @@
     return d.data.name.length * CHAR_SPACE < perimeter;
   };
 
-  const svg = d3.select('body').append('svg')
-    .style('width', '100vw')
-    .style('height', '100vh')
+  const reveal = d3.select('.slides')
+
+  const svg = d3.select('.d3-wrapper').append('svg')
+    .style('width', '100%')
+    .style('height', '100%')
     .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
     .on('click', () => focusOn()); // Reset zoom on canvas click
 
@@ -95,21 +156,53 @@
     const slice = svg.selectAll('g.slice')
       .data(partition(root).descendants());
 
+    const slajd = reveal.selectAll('.slide-template')
+      .data(partition(root).descendants());
+
     slice.exit().remove();
+    // slajd.exit().remove();
+
+    console.log(slajd)
 
     const newSlice = slice.enter()
-      .append('g').attr('class', 'slice')
+      .append('g')
+      .attr('class', d => {
+        const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
+        return `slice ${cssClass}`
+      })
       .on('click', d => {
         d3.event.stopPropagation();
         focusOn(d);
+        window.location.hash = "#/1"
       });
+
+    const newSlide = slajd.enter().append('section').attr('class', 'slajd')
+
+    newSlide.text(d => {
+      console.log(d)
+      return d.data.name
+    });
 
     newSlice.append('title')
       .text(d => d.data.name + '\n' + formatNumber(d.value));
 
     newSlice.append('path')
-      .attr('class', 'main-arc')
-      .style('fill', d => color((d.children ? d : d.parent).data.name))
+      .attr('class', d => {
+        const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
+        return `main-arc ${cssClass}`
+      })
+      // .attr('class', d => {
+      //   const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
+      //   return `main-arc ${cssClass}`
+      // })
+      // .style('fill', d => {
+      //
+      //   const nodeColor = d.data.color || d.parent?.data.color || d.parent?.parent?.data.color
+      //   console.log(d, nodeColor)
+      //
+      //   return color(nodeColor ? nodeColor : "#ccc")
+      //   // return color(nodeColor ? nodeColor : (d.children ? d : d.parent).data.name)
+      // })
       .attr('d', arc);
 
     newSlice.append('path')
@@ -120,24 +213,22 @@
     const text = newSlice.append('text')
       .attr('display', d => textFits(d) ? null : 'none');
 
-    // Add white contour
     text.append('textPath')
       .attr('startOffset','50%')
       .attr('xlink:href', (_, i) => `#hiddenArc${i}` )
       .text(d => d.data.name)
-      .style('fill', 'none')
-      .style('stroke', '#fff')
-      .style('stroke-width', 5)
-      .style('stroke-linejoin', 'round');
-
-    text.append('textPath')
-      .attr('startOffset','50%')
-      .attr('xlink:href', (_, i) => `#hiddenArc${i}` )
-      .text(d => d.data.name);
+      .style('font-size', '20px');
   });
 
   function focusOn(d = { x0: 0, x1: 1, y0: 0, y1: 1 }) {
+console.log("focusOn",d.children)
+    if(d.children === undefined) {
+        console.log(d)
+      moveStackToFront(d.parent);
 
+      return
+    }
+    moveStackToFront(d);
     const transition = svg.transition()
       .duration(750)
       .tween('scale', () => {
@@ -155,7 +246,7 @@
     transition.selectAll('text')
       .attrTween('display', d => () => textFits(d) ? null : 'none');
 
-    moveStackToFront(d);
+
 
     function moveStackToFront(elD) {
       svg.selectAll('.slice').filter(d => d === elD)
