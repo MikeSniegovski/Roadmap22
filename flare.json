@@ -11,19 +11,33 @@
           "size": 10
         },
         {
-          "name": "Migracja na nowe PHP 8",
+          "name": "Migracja na PHP 8",
           "size": 10
         },
         {
           "name": "Architektura",
-          "size": 10
+          "size": 10,
+          "children": [
+            {
+              "name": "Elastyczniejszy CORE",
+              "size": 10
+            },
+            {
+              "name": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
+              "size": 10
+            }
+          ]
         },
         {
           "name": "Yii3 framework",
           "size": 10
         },
         {
-          "name": "Chmura",
+          "name": "Spojrzeć w chmury?",
+          "size": 10
+        },
+        {
+          "name": "LDAP - serwer uwierzytelniania",
           "size": 10
         }
       ]
