@@ -66,7 +66,7 @@
         }
     </style>
 
-    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src='d3.v4.min.js'></script>
     <script src="reveal.js"></script>
 </head>
 <body>
@@ -86,7 +86,7 @@
   // - https://revealjs.com/config/
   Reveal.initialize({
     hash: true,
-
+    embedded: false
     // Learn about plugins: https://revealjs.com/plugins/
     // plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
   });
@@ -173,15 +173,29 @@
       .on('click', d => {
         d3.event.stopPropagation();
         focusOn(d);
-        window.location.hash = "#/1"
+        window.location.hash = `#/${d.data.id}`
       });
 
-    const newSlide = slajd.enter().append('section').attr('class', 'slajd')
+    const newSlide = slajd.enter()
+      .append('section')
+      .attr('class', 'slajd')
+      .attr('id', d => {
+        return d.data.id || null
+      })
 
     newSlide.text(d => {
-      console.log(d)
       return d.data.name
     });
+
+    newSlide.append('p')
+    .text(d => {
+      return d.data.description || ""
+    });
+
+    newSlide.append('img')
+      .attr('src', d => {
+        return d.data.image || null
+      })
 
     newSlice.append('title')
       .text(d => d.data.name + '\n' + formatNumber(d.value));

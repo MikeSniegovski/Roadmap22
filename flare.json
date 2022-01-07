@@ -4,15 +4,26 @@
     {
       "name": "Backend",
       "class": "backend",
-      "color": "#e51f7e",
+      "title":  "Backend",
+      "description": "bla bla",
+      "image": "",
+      "id": "b-backend",
       "children": [
         {
           "name": "Testy automatyczne",
-          "size": 10
+          "size": 10,
+          "title":  "Testy automatyczne",
+          "description": "bla bla",
+          "image": "https://via.placeholder.com/150",
+          "id": "b-ta"
         },
         {
           "name": "Migracja na PHP 8",
-          "size": 10
+          "size": 10,
+          "title":  "Migracja na PHP 8",
+          "description": "bla bla PHP 8",
+          "image": "https://via.placeholder.com/150",
+          "id": "b-mphp8"
         },
         {
           "name": "Architektura",
