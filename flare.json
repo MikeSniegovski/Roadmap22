@@ -10,45 +10,49 @@
       "id": "b-backend",
       "children": [
         {
-          "name": "Testy automatyczne",
+          "name": "Testy",
           "size": 10,
-          "title":  "Testy automatyczne",
+          "title": "Testy automatyczne",
           "description": "bla bla",
-          "image": "https://via.placeholder.com/150",
-          "id": "b-ta"
+          "image": "images/trollface.png",
+          "id": "b-test"
         },
         {
-          "name": "Migracja na PHP 8",
+          "name": "PHP 8",
           "size": 10,
-          "title":  "Migracja na PHP 8",
+          "title": "Migracja na PHP 8",
           "description": "bla bla PHP 8",
           "image": "https://via.placeholder.com/150",
-          "id": "b-mphp8"
+          "id": "b-php8"
         },
         {
           "name": "Architektura",
           "size": 10,
           "children": [
             {
-              "name": "Elastyczniejszy CORE",
+              "name": "CORE redesign",
               "size": 10
             },
             {
-              "name": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
+              "name": "Standaryzacja",
+              "title": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
               "size": 10
             }
           ]
         },
         {
-          "name": "Yii3 framework",
+          "name": "Yii3",
+          "title": "Yii3 framework",
           "size": 10
         },
         {
-          "name": "Spojrzeć w chmury?",
+          "name": "Cloud?",
+          "title": "Spojrzeć w chmury?",
           "size": 10
         },
         {
-          "name": "LDAP - serwer uwierzytelniania",
+          "name": "LDAP",
+          "title": "LDAP jako centralny serwer uwierzytelniania",
           "size": 10
         }
       ]
