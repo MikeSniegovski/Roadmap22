@@ -21,39 +21,47 @@
           "name": "PHP 8",
           "size": 10,
           "title": "Migracja na PHP 8",
-          "description": "bla bla PHP 8",
-          "image": "https://via.placeholder.com/150",
+          "description": "Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match",
+          "image": "images/lol-face.png",
           "id": "b-php8"
         },
         {
           "name": "Architektura",
           "size": 10,
+          "id": "b-arch",
           "children": [
             {
               "name": "CORE redesign",
-              "size": 10
+              "size": 10,
+              "id": "b-core"
             },
             {
               "name": "Standaryzacja",
               "title": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
-              "size": 10
+              "size": 10,
+              "id": "b-std"
             }
           ]
         },
         {
           "name": "Yii3",
           "title": "Yii3 framework",
-          "size": 10
+          "size": 10,
+          "id": "b-yii3"
         },
         {
           "name": "Cloud?",
           "title": "Spojrzeć w chmury?",
-          "size": 10
+          "size": 5,
+          "id": "b-cloud"
         },
         {
           "name": "LDAP",
           "title": "LDAP jako centralny serwer uwierzytelniania",
-          "size": 10
+          "description": "Dzięki niemu przy pomocy kilku klików dodamy/usuniemy konto, któremu nadamy/zabierzemy uprawnienia do kompatybilnych usług.",
+          "image": "https://image.pngaaa.com/956/5476956-middle.png",
+          "size": 10,
+          "id": "b-ldap"
         }
       ]
     },
