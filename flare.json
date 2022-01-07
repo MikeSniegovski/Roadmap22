@@ -248,32 +248,34 @@
       "class": "team",
       "children": [
         {
-          "name": "Lepsze kontrakty / Dokumentacja API",
-          "size": 10
+          "name": "API",
+          "title": "Lepsze kontrakty / dokumentacja API",
+          "size": 10,
+          "id": "t-api"
         },
         {
-          "name": "CodeReview checklist",
-          "size": 10
+          "name": "Static Page",
+          "title": "Statyczne strony z ADM",
+          "size": 10,
+          "id": "t-page"
         },
         {
-          "name": "Redundancja uprawnień",
-          "size": 10
+          "name": "ADM",
+          "title": "Nowy panel ADM",
+          "size": 10,
+          "id": "t-adm"
         },
         {
-          "name": "Statyczne strony z ADM",
-          "size": 10
-        },
-        {
-          "name": "Nowy panel ADM",
-          "size": 10
-        },
-        {
-          "name": "Kontrola nad logami",
-          "size": 10
+          "name": "ELK",
+          "title": "Kontrola nad logami",
+          "size": 10,
+          "id": "t-elk"
         },
         {
           "name": "Szkolenia",
-          "size": 10
+          "title": "Szkolenia wewnętrzna",
+          "size": 10,
+          "id": "t-train"
         }
       ]
     }
