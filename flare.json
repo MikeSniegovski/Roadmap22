@@ -5,10 +5,17 @@
   "children": [
     {
       "class": "backend",
+      "name": "RoadMap 2022",
+      "title": "RoadMap 2022",
+      "description": "Jest kilka pomysłów, co by tu zrobić, aby było lepiej.",
+      "id": "second"
+    },
+    {
+      "class": "backend",
       "name": "Backend",
       "title": "Backend",
       "description": "Jest kilka pomysłów, co by tu zrobić, aby było lepiej.",
-      "image": "images/idea.png",
+      "image": "./images/idea.png",
       "id": "b-backend",
       "children": [
         {
@@ -76,25 +83,31 @@
     },
     {
       "name": "Frontend",
+      "title": "Frontend",
       "class": "frontend",
       "id": "f-frontend",
       "children": [
         {
-          "name": "Testy automatyczne",
+          "name": "Testy",
+          "title": "Testy automatyczne",
+          "description": "Testowanie manualne jest mocno słabe...",
           "id": "f-ta",
           "children": [
             {
               "name": "Jest.js",
+              "tile": "Jest.js",
               "id": "f-jest",
               "size": 10
             },
             {
               "name": "Storybook",
+              "tile": "Storybook",
               "id": "f-Storybook",
               "size": 10
             },
             {
               "name": "Testy integracyjne?",
+              "title": "Testy integracyjne?",
               "id": "f-intergation",
               "size": 10
             },
@@ -106,102 +119,92 @@
           ]
         },
         {
-          "name": "Obsługa błędów",
+          "name": "Błędy",
+          "title": "Obsługa błędów",
           "id": "f-err",
           "children": [
             {
               "name": "ErrorBoundary",
               "id": "f-err-br",
-
               "size": 10
             },
             {
               "name": "Domyślny obrazek po stronie Gatsbiego",
               "id": "f-defimg",
-
               "size": 10
             },
             {
               "name": "logowanie błędów",
               "id": "f-er-log",
-
               "size": 10
             },
             {
               "name": "Raport z najczęstszymi błędami",
               "id": "f-er-rap",
-
               "size": 10
             },
             {
               "name": "Metody przechwytywania błędów",
               "id": "f-er-meth",
-
               "size": 10
             }
           ]
         },
         {
-          "name": "Core dla frontu",
+          "name": "Core",
+          "title": "Core dla Frontendu",
           "id": "f-core",
-
           "children": [
             {
               "name": "Gatsby themes",
               "id": "f-themes",
-
               "size": 10
             },
             {
               "name": "Lista pakietów",
               "id": "f-packets",
-
               "size": 10
             },
             {
               "name": "Verdaccio",
               "id": "f-Verdaccio",
-
               "size": 10
             },
             {
               "name": "Automatyzacja",
               "id": "f-auto",
-
               "size": 10
             }
           ]
         },
         {
           "name": "Next.js",
+          "title": "Next.js",
           "id": "f-next",
-
           "size": 10
         },
         {
-          "name": "Migracja na Node 16 + Gatsby 4",
+          "name": "Migracja",
+          "title": "Migracja na nowsze wersje",
+          "description": "Node 16 + Gatsby 4",
           "id": "f-mgr",
-
           "size": 10
         }
       ]
     },
     {
-      "name": "Design",
+      "name": "UX/UI",
       "class": "design",
       "id": "d-design",
-
       "children": [
         {
           "name": "UX Designer",
           "id": "d-ux",
-
           "size": 10
         },
         {
           "name": "Style Guide",
           "id": "d-sg",
-
           "size": 10
         }
       ]
@@ -210,35 +213,29 @@
       "name": "DevOps",
       "class": "devops",
       "id": "d-devops",
-
       "children": [
         {
           "name": "Docker",
           "id": "devops-Docker",
-
           "children": [
             {
               "name": "Jak działa git-submodule w kontekście naszego docker-imagesOPEN ",
               "id": "devops-git",
-
               "size": 10
             },
             {
               "name": "Prywatny rejestr obrazów Dockerowych",
               "id": "devops-registry",
-
               "size": 10
             },
             {
               "name": "Nieupierdliwe uruchamianie testów API pod Docker'em",
               "id": "devops-test",
-
               "size": 10
             },
             {
               "name": "Gdzie, do czego i kiedy chcemy lub nie mieć coś na Kubernetesie?",
               "id": "devops-k8",
-
               "size": 10
             }
           ]
@@ -246,36 +243,30 @@
         {
           "name": "Ci/Cd",
           "id": "devops-ci-cd",
-
           "children": [
             {
               "name": "Przygotować pilotażowo 'wspólne api-dev dla frontendów'",
               "id": "devops-devlocal",
-
               "size": 10
             },
             {
               "name": "POC: Jenkins Pipeline",
               "id": "devops-pipe",
-
               "size": 10
             },
             {
               "name": "Jenkins ma jedno zadanie do odpalania testów na Codeception + Node",
               "id": "devops-jnk-test",
-
               "size": 10
             },
             {
               "name": "Jak wersjonować nasze job’y?",
               "id": "devops-ver",
-
               "size": 10
             },
             {
               "name": "Jenkins potrafi szybko się przygotować do odpalania testów nowego projektu.",
               "id": "devops-auto-test",
-
               "size": 10
             }
           ]
@@ -283,44 +274,37 @@
         {
           "name": "Budowniczy Frontendu",
           "id": "devops-fb",
-
           "size": 10
         }
       ]
     },
     {
-      "name": "Powiększamy zespół",
+      "name": "Ekspansja",
       "class": "expand",
       "id": "e-expand",
-
       "children": [
         {
           "name": "OnBoarding dla Pretendenta",
           "id": "e-onb",
-
           "size": 10
         },
         {
           "name": "Employer Branding",
           "id": "e-eb",
-
           "children": [
             {
               "name": "Lista technologii dla nowych ludzi",
               "id": "e-eb-techlist",
-
               "size": 10
             },
             {
               "name": "Ścieżka dla Juniora",
               "id": "e-eb-path",
-
               "size": 10
             },
             {
               "name": "Blog",
               "id": "e-eb-blog",
-
               "size": 10
             }
           ]
@@ -331,7 +315,6 @@
       "name": "Team",
       "class": "team",
       "id": "t-team",
-
       "children": [
         {
           "name": "API",

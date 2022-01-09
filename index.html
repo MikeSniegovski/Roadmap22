@@ -1,9 +1,10 @@
 <!doctype html>
-<html>
+<html lang="pl">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RoadMap 2022</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/reveal.css">
     <link rel="stylesheet" href="styles/black.css">
@@ -16,47 +17,15 @@
 <div class="d3-wrapper"></div>
 <div class="reveal">
     <div class="slides">
-        <section>
-            <h1 class="r-fit-text">RoadMap 2022</h1>
+        <section class="slajd">
+            <h1>RoadMap 2022</h1>
         </section>
-        <section class="slajd"></section>
+        <section class="slajd">
+            <h1>Zmiany... zamiany...</h1>
+        </section>
 
     </div>
 </div>
-<!--        <section id="b-backend" data-background-color="rgba(229, 31, 126,0.8)">-->
-<!--            <h1 class="r-fit-text">Backend</h1>-->
-
-
-<!--            <section id="b-test">-->
-<!--                <h1 class="r-fit-text">Testy automatyczne</h1>-->
-<!--                <div>bla bla</div>-->
-<!--            </section>-->
-<!--            <section id="b-php8">-->
-<!--                <h1 class="r-fit-text">Migracja na PHP 8</h1>-->
-<!--                <div>Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match</div>-->
-<!--            </section>-->
-<!--            <section id="b-arch">-->
-<!--                <h1 class="r-fit-text">Architektura</h1>-->
-
-<!--                <p class="fragment fade-up" id="b-core">CORE redesign</p>-->
-<!--                <p class="fragment fade-up" id="b-std">Standaryzacja usług, repozytoriów, procesorów, CRUD'a...</p>-->
-<!--            </section>-->
-<!--            <section id="b-yii3">-->
-<!--                <h1 class="r-fit-text">Yii3 framework</h1>-->
-
-<!--            </section>-->
-<!--            <section id="b-cloud">-->
-<!--                <h1 class="r-fit-text">Spojrzeć w chmury?</h1>-->
-
-<!--            </section>-->
-<!--            <section id="b-ldap">-->
-<!--                <h1 class="r-fit-text">LDAP jako centralny serwer uwierzytelniania</h1>-->
-<!--                <div>Dzięki niemu przy pomocy kilku klików dodamy/usuniemy konto, któremu nadamy/zabierzemy uprawnienia-->
-<!--                    do kompatybilnych usług.-->
-<!--                </div>-->
-<!--            </section>-->
-<!--        </section>-->
-<!--<section class="slide-template"></section>-->
 <script>
   const width = window.innerHeight - 40,
     height = window.innerHeight - 40,
@@ -109,6 +78,8 @@
     .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
     .on('click', () => focusOn()); // Reset zoom on canvas click
 
+  let globalData;
+
   d3.json('./flare.json', (error, root) => {
     if (error) throw error;
 
@@ -119,6 +90,8 @@
       .data(partition(root).descendants());
 
     slice.exit().remove();
+
+    globalData = slice
 
     const newSlice = slice.enter()
       .append('g')
@@ -165,18 +138,16 @@
     const reveal = d3.select('.slides')
 
     const slajd = reveal.selectAll('.slajd')
-      // .data(root);
       .data(partition(root).descendants());
-
 
     const newSlajd = slajd.enter()
 
     const level0 = newSlajd.filter(function (d) {
         const item = d.depth === 0 ? d : null
-        return item;
+      console.log("level0",d, item)
+      return item;
       }
     )
-    console.log("level0", level0)
 
     level0
       .append("section")
@@ -199,7 +170,6 @@
       });
 
     const level1 = newSlajd.filter(d => d.depth === 1)
-      //   const level1 = newSlajd
       .append("section")
       .attr('class', d => {
         const cssClass = d.data.class || ""
@@ -224,8 +194,6 @@
 
     level1.append("img")
       .attr('src', d => {
-        console.log('img', d.data.image)
-
         return d.data.image || null
       })
 
@@ -236,13 +204,9 @@
         .enter()
         .append("section")
         .attr('class', d => {
-          // console.log("yoł", p, d)
-
-          // const cssClass = d.data.class || ""
           return `slajd depth2`
         })
         .attr('id', d => {
-          console.log("id", d)
           return d.id || null
         });
 
@@ -259,108 +223,8 @@
           return d.description || ""
         });
 
-      console.log("each", level2)
 
-    });
-
-    // level2
-    //   .append("section")
-    //   .text(d => {
-    //     return d.data.description || ""
-    //   })
-    // level1.each(function(p, j) {
-    //   console.log("level1",p)
-    //
-    //   p.children.forEach(function(child) {
-    //     console.log("child",child)
-    //     this.append("section")
-    //       .attr('class', `slajd depth2`)
-    //       .text(child => {
-    //         return child.data.name || ""
-    //       });
-    //   })
-    //   // const section = document.createElement('section');
-    //   // section.classList = `slajd depth2`
-    //   // section.innerText = `slajd depth2`
-    //   // this.append(section);
-    // });
-
-
-    // const lev1Children = level1.filter(function (d) {
-    //   console.log(d.children)
-    //     return d.children !== undefined
-    //   }
-    // )
-    // console.log("level1",level1)
-    // level1
-    //   .data(d => {
-    //     console.log("enter", d  )
-    //     return  d
-    //   }).enter()
-    //   .append("section", d => {
-    //     console.log(d.children)
-    //     return true
-    //   })
-    //   .attr('class', d => {
-    //     const cssClass = d.data.class || ""
-    //     return `slajd depth2 ${cssClass}`
-    //   })
-    //   .attr('id', d => {
-    //     return d.data.id || null
-    //   })
-
-    // const newSlajd = slajd.enter()
-
-    // .append("section")
-    // .attr('class', d => {
-    //   console.log("depth2",d)
-    //   const cssClass = d.data.class || ""
-    //   return `slajd depth2 ${cssClass}`
-    // })
-    // .attr('id', d => {
-    //   return d.data.id || null
-    // })
-    // .append("span")
-
-    // const depth1 = newSlajd.selectAll(".depth1 section")
-    //   .append("section")
-    //   .attr('class', d => {
-    //     const cssClass = d.data.class || ""
-    //     return `slajd depth2 ${cssClass}`
-    //   })
-    //   .attr('id', d => {
-    //     return d.data.id || null
-    //   })
-    // console.log(depth1)
-
-    // const level2 = newSlajd.filter(function (d) {
-    //     const item = d.depth === 2 ? d : null
-    //     return item;
-    //   }
-    // )
-    //   .append("section")
-    //   .attr('class', d => {
-    //     const cssClass = d.data.class || ""
-    //     return `slajd ${cssClass}`
-    //   })
-    //   .attr('id', d => {
-    //     return d.data.id || null
-    //   })
-    //
-    // level2.text(d => {
-    //   return d.data.name
-    // });
-    //
-    // level2.append('p')
-    //   .text(d => {
-    //     return d.data.description || ""
-    //   });
-    //
-    // level2.append('img')
-    //   .attr('src', d => {
-    //     return d.data.image || null
-    //   })
-
+    })
   });
 
   function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
@@ -403,16 +267,32 @@
   Reveal.initialize({
     hash: true,
     embedded: false
-    // Learn about plugins: https://revealjs.com/plugins/
-    // plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
   });
 
   Reveal.on('slidechanged', event => {
-    // console.log(event, event.currentSlide.id, event.currentSlide.__data__)
-    if (event.currentSlide.__data__) {
-      focusOn(event.currentSlide.__data__);
+    let target = null
+    const currentSlide = event.currentSlide.__data__
+    const targetId = currentSlide.data?.id || currentSlide.id
+    const nodes = globalData._enter[0]
+
+    if (targetId && Array.isArray(nodes)) {
+
+      const node = nodes.find(node => {
+        return node.__data__.data.id === targetId
+      })
+      console.log("node",node.__data__)
+      if(node.__data__.depth === 0){
+        target = node.__data__
+      }
+
+      if(node.__data__.depth === 2){
+        target = node.__data__.parent
+      }
     }
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+    if(target !== null) {
+      focusOn(target);
+    }
   });
 </script>
 </body>

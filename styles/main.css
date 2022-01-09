@@ -56,6 +56,12 @@ svg{
   fill: #fff
 }
 
+.slice.frontend text,
+.slice.design text,
+.slice.team text {
+  fill: #000
+}
+
 .slice text {
   fill: #fff
 }
