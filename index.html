@@ -1,70 +1,13 @@
+<!doctype html>
+<html>
+
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/reveal.css">
     <link rel="stylesheet" href="styles/black.css">
-    <style>
-        body {
-            font-family: Sans-serif;
-            font-size: 11px;
-            margin: 0;
-            padding: 0;
-            background:  #000 url("./bg.png") no-repeat;
-            background-size: cover;
-            display: flex;
-        }
-        .reveal{
-            width: 50%;
-        }
-        .d3-wrapper{
-            width: 50%;
-        }
-        .slice {
-            cursor: pointer;
-        }
-
-        .slice .main-arc {
-            stroke: #000;
-            stroke-width: 5px;
-            transition: opacity 200ms;
-        }
-        .slice .main-arc:hover {
-            opacity: 0.6
-        }
-        .slice.backend .main-arc {
-            fill: #e51f7e
-        }
-
-        .slice.devops text,
-        .slice.expand text,
-        .slice.backend text {
-            fill: #fff
-        }
-        .slice .main-arc.expand {
-            fill: #e51f7e
-        }
-        .slice .main-arc.frontend {
-            fill: #fdbd39
-        }
-        .slice .main-arc.design {
-            fill: #34e3e8
-        }
-        .slice .main-arc.team {
-            fill: #34e3e8
-        }
-        .slice .main-arc.devops {
-            fill: #4a0ead
-        }
-
-        .slice .hidden-arc {
-            fill: none;
-        }
-
-        .slice text {
-            pointer-events: none;
-            dominant-baseline: middle;
-            text-anchor: middle;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css">
 
     <script src='d3.v4.min.js'></script>
     <script src="reveal.js"></script>
@@ -73,27 +16,50 @@
 <div class="d3-wrapper"></div>
 <div class="reveal">
     <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
+        <section>
+            <h1 class="r-fit-text">RoadMap 2022</h1>
+        </section>
+        <section class="slajd"></section>
+
     </div>
 </div>
+<!--        <section id="b-backend" data-background-color="rgba(229, 31, 126,0.8)">-->
+<!--            <h1 class="r-fit-text">Backend</h1>-->
 
-<section class="slide-template"></section>
 
+<!--            <section id="b-test">-->
+<!--                <h1 class="r-fit-text">Testy automatyczne</h1>-->
+<!--                <div>bla bla</div>-->
+<!--            </section>-->
+<!--            <section id="b-php8">-->
+<!--                <h1 class="r-fit-text">Migracja na PHP 8</h1>-->
+<!--                <div>Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match</div>-->
+<!--            </section>-->
+<!--            <section id="b-arch">-->
+<!--                <h1 class="r-fit-text">Architektura</h1>-->
+
+<!--                <p class="fragment fade-up" id="b-core">CORE redesign</p>-->
+<!--                <p class="fragment fade-up" id="b-std">Standaryzacja usług, repozytoriów, procesorów, CRUD'a...</p>-->
+<!--            </section>-->
+<!--            <section id="b-yii3">-->
+<!--                <h1 class="r-fit-text">Yii3 framework</h1>-->
+
+<!--            </section>-->
+<!--            <section id="b-cloud">-->
+<!--                <h1 class="r-fit-text">Spojrzeć w chmury?</h1>-->
+
+<!--            </section>-->
+<!--            <section id="b-ldap">-->
+<!--                <h1 class="r-fit-text">LDAP jako centralny serwer uwierzytelniania</h1>-->
+<!--                <div>Dzięki niemu przy pomocy kilku klików dodamy/usuniemy konto, któremu nadamy/zabierzemy uprawnienia-->
+<!--                    do kompatybilnych usług.-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </section>-->
+<!--<section class="slide-template"></section>-->
 <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-  Reveal.initialize({
-    hash: true,
-    embedded: false
-    // Learn about plugins: https://revealjs.com/plugins/
-    // plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-  });
-</script>
-<script>
-  const width = window.innerHeight -40,
-    height = window.innerHeight -40,
+  const width = window.innerHeight - 40,
+    height = window.innerHeight - 40,
     maxRadius = (Math.min(width, height) / 2) - 15;
 
   const formatNumber = d3.format(',d');
@@ -103,9 +69,7 @@
     .clamp(true);
 
   const y = d3.scaleSqrt()
-    .range([maxRadius*.1, maxRadius]);
-
-  const color = d3.scaleOrdinal(d3.schemeCategory20);
+    .range([maxRadius * .1, maxRadius]);
 
   const partition = d3.partition();
 
@@ -116,7 +80,7 @@
     .outerRadius(d => Math.max(0, y(d.y1)));
 
   const middleArcLine = d => {
-    const halfPi = Math.PI/2;
+    const halfPi = Math.PI / 2;
     const angles = [x(d.x0) - halfPi, x(d.x1) - halfPi];
     const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
 
@@ -139,8 +103,6 @@
     return d.data.name.length * CHAR_SPACE < perimeter;
   };
 
-  const reveal = d3.select('.slides')
-
   const svg = d3.select('.d3-wrapper').append('svg')
     .style('width', '100%')
     .style('height', '100%')
@@ -156,13 +118,7 @@
     const slice = svg.selectAll('g.slice')
       .data(partition(root).descendants());
 
-    const slajd = reveal.selectAll('.slide-template')
-      .data(partition(root).descendants());
-
     slice.exit().remove();
-    // slajd.exit().remove();
-
-    console.log(slajd)
 
     const newSlice = slice.enter()
       .append('g')
@@ -173,29 +129,14 @@
       .on('click', d => {
         d3.event.stopPropagation();
         focusOn(d);
-        window.location.hash = `#/${d.data.id}`
+        let path = `#/${d.data.id}`
+
+        if (d.data.level === 3) {
+          path = `#/${d.parent.id}/${d.data.id}`
+        }
+        window.location.hash = path
       });
 
-    const newSlide = slajd.enter()
-      .append('section')
-      .attr('class', 'slajd')
-      .attr('id', d => {
-        return d.data.id || null
-      })
-
-    newSlide.text(d => {
-      return d.data.name
-    });
-
-    newSlide.append('p')
-    .text(d => {
-      return d.data.description || ""
-    });
-
-    newSlide.append('img')
-      .attr('src', d => {
-        return d.data.image || null
-      })
 
     newSlice.append('title')
       .text(d => d.data.name + '\n' + formatNumber(d.value));
@@ -205,18 +146,6 @@
         const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
         return `main-arc ${cssClass}`
       })
-      // .attr('class', d => {
-      //   const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
-      //   return `main-arc ${cssClass}`
-      // })
-      // .style('fill', d => {
-      //
-      //   const nodeColor = d.data.color || d.parent?.data.color || d.parent?.parent?.data.color
-      //   console.log(d, nodeColor)
-      //
-      //   return color(nodeColor ? nodeColor : "#ccc")
-      //   // return color(nodeColor ? nodeColor : (d.children ? d : d.parent).data.name)
-      // })
       .attr('d', arc);
 
     newSlice.append('path')
@@ -228,16 +157,214 @@
       .attr('display', d => textFits(d) ? null : 'none');
 
     text.append('textPath')
-      .attr('startOffset','50%')
-      .attr('xlink:href', (_, i) => `#hiddenArc${i}` )
+      .attr('startOffset', '50%')
+      .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
       .text(d => d.data.name)
       .style('font-size', '20px');
+
+    const reveal = d3.select('.slides')
+
+    const slajd = reveal.selectAll('.slajd')
+      // .data(root);
+      .data(partition(root).descendants());
+
+
+    const newSlajd = slajd.enter()
+
+    const level0 = newSlajd.filter(function (d) {
+        const item = d.depth === 0 ? d : null
+        return item;
+      }
+    )
+    console.log("level0", level0)
+
+    level0
+      .append("section")
+      .attr('class', d => {
+        const cssClass = d.data.class || ""
+        return `slajd depth0 ${cssClass}`
+      })
+      .attr('id', d => {
+        return d.data.id || null
+      })
+
+    level0
+      .text(d => {
+        return d.data.name
+      });
+
+    level0.append('p')
+      .text(d => {
+        return d.data.description || ""
+      });
+
+    const level1 = newSlajd.filter(d => d.depth === 1)
+      //   const level1 = newSlajd
+      .append("section")
+      .attr('class', d => {
+        const cssClass = d.data.class || ""
+        return `slajd depth1 ${cssClass}`
+      })
+      .attr('id', d => {
+        return d.data.id || null
+      })
+
+    level1
+      .append("h1")
+      .attr("class", "h-title")
+      .text(d => {
+        return d.data.title
+      });
+
+    level1.append('p')
+      .attr("class", "h-desc")
+      .text(d => {
+        return d.data.description || ""
+      });
+
+    level1.append("img")
+      .attr('src', d => {
+        console.log('img', d.data.image)
+
+        return d.data.image || null
+      })
+
+    d3.selectAll('.depth1').each(function (p, j) {
+      const level2 = d3.select(this)
+        .selectAll('section')
+        .data(p.data.children)
+        .enter()
+        .append("section")
+        .attr('class', d => {
+          // console.log("yoł", p, d)
+
+          // const cssClass = d.data.class || ""
+          return `slajd depth2`
+        })
+        .attr('id', d => {
+          console.log("id", d)
+          return d.id || null
+        });
+
+      level2
+        .append("h2")
+        .attr("class", "v-title")
+        .text(d => {
+          return d.title
+        });
+
+      level2.append('p')
+        .attr("class", "v-desc")
+        .text(d => {
+          return d.description || ""
+        });
+
+      console.log("each", level2)
+
+    });
+
+    // level2
+    //   .append("section")
+    //   .text(d => {
+    //     return d.data.description || ""
+    //   })
+    // level1.each(function(p, j) {
+    //   console.log("level1",p)
+    //
+    //   p.children.forEach(function(child) {
+    //     console.log("child",child)
+    //     this.append("section")
+    //       .attr('class', `slajd depth2`)
+    //       .text(child => {
+    //         return child.data.name || ""
+    //       });
+    //   })
+    //   // const section = document.createElement('section');
+    //   // section.classList = `slajd depth2`
+    //   // section.innerText = `slajd depth2`
+    //   // this.append(section);
+    // });
+
+
+    // const lev1Children = level1.filter(function (d) {
+    //   console.log(d.children)
+    //     return d.children !== undefined
+    //   }
+    // )
+    // console.log("level1",level1)
+    // level1
+    //   .data(d => {
+    //     console.log("enter", d  )
+    //     return  d
+    //   }).enter()
+    //   .append("section", d => {
+    //     console.log(d.children)
+    //     return true
+    //   })
+    //   .attr('class', d => {
+    //     const cssClass = d.data.class || ""
+    //     return `slajd depth2 ${cssClass}`
+    //   })
+    //   .attr('id', d => {
+    //     return d.data.id || null
+    //   })
+
+    // const newSlajd = slajd.enter()
+
+    // .append("section")
+    // .attr('class', d => {
+    //   console.log("depth2",d)
+    //   const cssClass = d.data.class || ""
+    //   return `slajd depth2 ${cssClass}`
+    // })
+    // .attr('id', d => {
+    //   return d.data.id || null
+    // })
+    // .append("span")
+
+    // const depth1 = newSlajd.selectAll(".depth1 section")
+    //   .append("section")
+    //   .attr('class', d => {
+    //     const cssClass = d.data.class || ""
+    //     return `slajd depth2 ${cssClass}`
+    //   })
+    //   .attr('id', d => {
+    //     return d.data.id || null
+    //   })
+    // console.log(depth1)
+
+    // const level2 = newSlajd.filter(function (d) {
+    //     const item = d.depth === 2 ? d : null
+    //     return item;
+    //   }
+    // )
+    //   .append("section")
+    //   .attr('class', d => {
+    //     const cssClass = d.data.class || ""
+    //     return `slajd ${cssClass}`
+    //   })
+    //   .attr('id', d => {
+    //     return d.data.id || null
+    //   })
+    //
+    // level2.text(d => {
+    //   return d.data.name
+    // });
+    //
+    // level2.append('p')
+    //   .text(d => {
+    //     return d.data.description || ""
+    //   });
+    //
+    // level2.append('img')
+    //   .attr('src', d => {
+    //     return d.data.image || null
+    //   })
+
   });
 
-  function focusOn(d = { x0: 0, x1: 1, y0: 0, y1: 1 }) {
-console.log("focusOn",d.children)
-    if(d.children === undefined) {
-        console.log(d)
+  function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
+    if (d.children === undefined) {
       moveStackToFront(d.parent);
 
       return
@@ -248,7 +375,10 @@ console.log("focusOn",d.children)
       .tween('scale', () => {
         const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
           yd = d3.interpolate(y.domain(), [d.y0, 1]);
-        return t => { x.domain(xd(t)); y.domain(yd(t)); };
+        return t => {
+          x.domain(xd(t));
+          y.domain(yd(t));
+        };
       });
 
     transition.selectAll('path.main-arc')
@@ -261,14 +391,29 @@ console.log("focusOn",d.children)
       .attrTween('display', d => () => textFits(d) ? null : 'none');
 
 
-
     function moveStackToFront(elD) {
       svg.selectAll('.slice').filter(d => d === elD)
-        .each(function(d) {
+        .each(function (d) {
           this.parentNode.appendChild(this);
           if (d.parent) { moveStackToFront(d.parent); }
         })
     }
   }
+
+  Reveal.initialize({
+    hash: true,
+    embedded: false
+    // Learn about plugins: https://revealjs.com/plugins/
+    // plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+  });
+
+  Reveal.on('slidechanged', event => {
+    // console.log(event, event.currentSlide.id, event.currentSlide.__data__)
+    if (event.currentSlide.__data__) {
+      focusOn(event.currentSlide.__data__);
+    }
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+  });
 </script>
 </body>
+</html>

@@ -1,0 +1,91 @@
+body {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  background: #000 url("../images/bg.png") no-repeat;
+  background-size: cover;
+  display: flex;
+}
+svg{
+  font-family: sans-serif;
+}
+
+/*.h-title{*/
+/*  font-size: 6vw;*/
+/*}*/
+/*.h-desc{*/
+/*  font-size: 4vw;*/
+/*}*/
+
+/*.v-title{*/
+/*  font-size: 4vw;*/
+/*}*/
+/*.v-desc{*/
+/*  font-size: 2vw;*/
+/*}*/
+
+.reveal {
+  width: 50%;
+}
+
+.d3-wrapper {
+  width: 50%;
+}
+
+.slice {
+  cursor: pointer;
+}
+
+.slice .main-arc {
+  stroke: #000;
+  stroke-width: 5px;
+  transition: opacity 200ms;
+}
+
+.slice .main-arc:hover {
+  opacity: 0.6
+}
+
+.slice.backend .main-arc {
+  fill: rgb(229, 31, 126)
+}
+
+.slice.devops text,
+.slice.expand text,
+.slice.backend text {
+  fill: #fff
+}
+
+.slice text {
+  fill: #fff
+}
+
+.slice .main-arc.expand {
+  fill: #e51f7e
+}
+
+.slice .main-arc.frontend {
+  fill: #fdbd39
+}
+
+.slice .main-arc.design {
+  fill: #34e3e8
+}
+
+.slice .main-arc.team {
+  fill: #34e3e8
+}
+
+.slice .main-arc.devops {
+  fill: #4a0ead
+}
+
+.slice .hidden-arc {
+  fill: none;
+}
+
+.slice text {
+  pointer-events: none;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}

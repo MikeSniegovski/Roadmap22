@@ -1,12 +1,13 @@
 {
-  "name": "AlterPage",
+  "name": "RoadMap 2022",
+  "title": "RoadMap 2022",
+  "id": "first",
   "children": [
     {
       "name": "Backend",
       "class": "backend",
-      "title":  "Backend",
+      "title": "Backend",
       "description": "bla bla",
-      "image": "",
       "id": "b-backend",
       "children": [
         {
@@ -14,7 +15,7 @@
           "size": 10,
           "title": "Testy automatyczne",
           "description": "bla bla",
-          "image": "images/trollface.png",
+          "image": "./images/trollface.png",
           "id": "b-test"
         },
         {
@@ -22,24 +23,23 @@
           "size": 10,
           "title": "Migracja na PHP 8",
           "description": "Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match",
-          "image": "images/lol-face.png",
+          "image": "./images/lol-face.png",
           "id": "b-php8"
         },
         {
           "name": "Architektura",
-          "size": 10,
           "id": "b-arch",
           "children": [
             {
               "name": "CORE redesign",
-              "size": 10,
-              "id": "b-core"
+              "size": 15,
+              "id": "0"
             },
             {
               "name": "Standaryzacja",
               "title": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
-              "size": 10,
-              "id": "b-std"
+              "size": 15,
+              "id": "1"
             }
           ]
         },
@@ -68,80 +68,111 @@
     {
       "name": "Frontend",
       "class": "frontend",
+      "id": "f-frontend",
       "children": [
         {
           "name": "Testy automatyczne",
+          "id": "f-ta",
           "children": [
             {
               "name": "Jest.js",
+              "id": "f-jest",
               "size": 10
             },
             {
               "name": "Storybook",
+              "id": "f-Storybook",
               "size": 10
             },
             {
               "name": "Testy integracyjne?",
+              "id": "f-intergation",
               "size": 10
             },
             {
               "name": "Testowanie Reduxa",
+              "id": "f-tr",
               "size": 10
             }
           ]
         },
         {
           "name": "Obsługa błędów",
+          "id": "f-err",
           "children": [
             {
               "name": "ErrorBoundary",
+              "id": "f-err-br",
+
               "size": 10
             },
             {
               "name": "Domyślny obrazek po stronie Gatsbiego",
+              "id": "f-defimg",
+
               "size": 10
             },
             {
               "name": "logowanie błędów",
+              "id": "f-er-log",
+
               "size": 10
             },
             {
               "name": "Raport z najczęstszymi błędami",
+              "id": "f-er-rap",
+
               "size": 10
             },
             {
               "name": "Metody przechwytywania błędów",
+              "id": "f-er-meth",
+
               "size": 10
             }
           ]
         },
         {
           "name": "Core dla frontu",
+          "id": "f-core",
+
           "children": [
             {
               "name": "Gatsby themes",
+              "id": "f-themes",
+
               "size": 10
             },
             {
               "name": "Lista pakietów",
+              "id": "f-packets",
+
               "size": 10
             },
             {
               "name": "Verdaccio",
+              "id": "f-Verdaccio",
+
               "size": 10
             },
             {
               "name": "Automatyzacja",
+              "id": "f-auto",
+
               "size": 10
             }
           ]
         },
         {
           "name": "Next.js",
+          "id": "f-next",
+
           "size": 10
         },
         {
           "name": "Migracja na Node 16 + Gatsby 4",
+          "id": "f-mgr",
+
           "size": 10
         }
       ]
@@ -149,13 +180,19 @@
     {
       "name": "Design",
       "class": "design",
+      "id": "d-design",
+
       "children": [
         {
           "name": "UX Designer",
+          "id": "d-ux",
+
           "size": 10
         },
         {
           "name": "Style Guide",
+          "id": "d-sg",
+
           "size": 10
         }
       ]
@@ -163,55 +200,81 @@
     {
       "name": "DevOps",
       "class": "devops",
+      "id": "d-devops",
+
       "children": [
         {
           "name": "Docker",
+          "id": "devops-Docker",
+
           "children": [
             {
               "name": "Jak działa git-submodule w kontekście naszego docker-imagesOPEN ",
+              "id": "devops-git",
+
               "size": 10
             },
             {
               "name": "Prywatny rejestr obrazów Dockerowych",
+              "id": "devops-registry",
+
               "size": 10
             },
             {
               "name": "Nieupierdliwe uruchamianie testów API pod Docker'em",
+              "id": "devops-test",
+
               "size": 10
             },
             {
               "name": "Gdzie, do czego i kiedy chcemy lub nie mieć coś na Kubernetesie?",
+              "id": "devops-k8",
+
               "size": 10
             }
           ]
         },
         {
           "name": "Ci/Cd",
+          "id": "devops-ci-cd",
+
           "children": [
             {
               "name": "Przygotować pilotażowo 'wspólne api-dev dla frontendów'",
+              "id": "devops-devlocal",
+
               "size": 10
             },
             {
               "name": "POC: Jenkins Pipeline",
+              "id": "devops-pipe",
+
               "size": 10
             },
             {
               "name": "Jenkins ma jedno zadanie do odpalania testów na Codeception + Node",
+              "id": "devops-jnk-test",
+
               "size": 10
             },
             {
               "name": "Jak wersjonować nasze job’y?",
+              "id": "devops-ver",
+
               "size": 10
             },
             {
               "name": "Jenkins potrafi szybko się przygotować do odpalania testów nowego projektu.",
+              "id": "devops-auto-test",
+
               "size": 10
             }
           ]
         },
         {
           "name": "Budowniczy Frontendu",
+          "id": "devops-fb",
+
           "size": 10
         }
       ]
@@ -219,24 +282,36 @@
     {
       "name": "Powiększamy zespół",
       "class": "expand",
+      "id": "e-expand",
+
       "children": [
         {
           "name": "OnBoarding dla Pretendenta",
+          "id": "e-onb",
+
           "size": 10
         },
         {
           "name": "Employer Branding",
+          "id": "e-eb",
+
           "children": [
             {
               "name": "Lista technologii dla nowych ludzi",
+              "id": "e-eb-techlist",
+
               "size": 10
             },
             {
               "name": "Ścieżka dla Juniora",
+              "id": "e-eb-path",
+
               "size": 10
             },
             {
               "name": "Blog",
+              "id": "e-eb-blog",
+
               "size": 10
             }
           ]
@@ -246,6 +321,8 @@
     {
       "name": "Team",
       "class": "team",
+      "id": "t-team",
+
       "children": [
         {
           "name": "API",
@@ -278,6 +355,12 @@
           "id": "t-train"
         }
       ]
+    },
+    {
+      "name": "Sporo do zrobienia",
+      "class": "backend",
+      "title": "Sporo do zrobienia",
+      "id": "first"
     }
   ]
 }
