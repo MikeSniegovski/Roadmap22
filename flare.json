@@ -15,15 +15,14 @@
       "name": "Backend",
       "title": "Backend",
       "description": "Jest kilka pomysłów, co by tu zrobić, aby było lepiej.",
-      "image": "./images/idea.png",
       "id": "b-backend",
       "children": [
         {
           "name": "Testy",
           "title": "Testy automatyczne",
-          "description": "bla bla",
+          "description": "Wiemy co działa, łapiemy więcej błędów, deploje tak nie stresują a kontrakt jest zawsze spełniony :-)",
           "image": "./images/trollface.png",
-          "size": 10,
+          "size": 15,
           "id": "b-test"
         },
         {
@@ -31,27 +30,26 @@
           "title": "Migracja na PHP 8",
           "description": "Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match",
           "image": "./images/lol-face.png",
-          "size": 10,
+          "size": 20,
           "id": "b-php8"
         },
         {
           "name": "Architektura",
           "title": "Architektura",
-          "description": "",
+          "description": "Kolejny krok naprzód; technologia się zmienia.",
           "id": "b-arch",
-          "size": 10,
           "children": [
             {
               "name": "CORE",
               "title": "CORE redesign",
-              "description": "",
+              "description": "Zmniejszenie zależności aby ułatwić development modułów. Bardziej rużywaćlny kod.",
               "size": 15,
               "id": "b-core"
             },
             {
-              "name": "Standaryzacja",
-              "title": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
-              "description": "",
+              "name": "Std",
+              "title": "Większa standaryzacja kodu",
+              "description": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a... Szybsze Code Review, tańszy w utrzymaniu kod.",
               "size": 15,
               "id": "b-std"
             }
@@ -61,8 +59,16 @@
           "name": "Yii3",
           "title": "Yii3 framework",
           "description": "Nowa koncepcja/architektura. Czy, jak i które pakiety chcemy i możemy wykorzystać w naszych projektach?",
-          "size": 10,
+          "size": 15,
           "id": "b-yii3"
+        },
+        {
+          "name": "LDAP",
+          "title": "LDAP jako centralny serwer uwierzytelniania",
+          "description": "Dzięki niemu przy pomocy kilku klików dodamy/usuniemy konto, któremu nadamy/zabierzemy uprawnienia do kompatybilnych usług.",
+          "image": "https://image.pngaaa.com/956/5476956-middle.png",
+          "size": 15,
+          "id": "b-ldap"
         },
         {
           "name": "Cloud?",
@@ -70,14 +76,6 @@
           "description": "Może warto choć liznąć integrację z CloudFlare przy pierwszej byle okazji? :-)",
           "size": 5,
           "id": "b-cloud"
-        },
-        {
-          "name": "LDAP",
-          "title": "LDAP jako centralny serwer uwierzytelniania",
-          "description": "Dzięki niemu przy pomocy kilku klików dodamy/usuniemy konto, któremu nadamy/zabierzemy uprawnienia do kompatybilnych usług.",
-          "image": "https://image.pngaaa.com/956/5476956-middle.png",
-          "size": 10,
-          "id": "b-ldap"
         }
       ]
     },
@@ -199,11 +197,15 @@
       "children": [
         {
           "name": "UX Designer",
+          "title": "UX Designer",
+          "description": "",
           "id": "d-ux",
           "size": 10
         },
         {
           "name": "Style Guide",
+          "title": "Style Guide",
+          "description": "",
           "id": "d-sg",
           "size": 10
         }
@@ -216,63 +218,33 @@
       "children": [
         {
           "name": "Docker",
-          "id": "devops-Docker",
-          "children": [
-            {
-              "name": "Jak działa git-submodule w kontekście naszego docker-imagesOPEN ",
-              "id": "devops-git",
-              "size": 10
-            },
-            {
-              "name": "Prywatny rejestr obrazów Dockerowych",
-              "id": "devops-registry",
-              "size": 10
-            },
-            {
-              "name": "Nieupierdliwe uruchamianie testów API pod Docker'em",
-              "id": "devops-test",
-              "size": 10
-            },
-            {
-              "name": "Gdzie, do czego i kiedy chcemy lub nie mieć coś na Kubernetesie?",
-              "id": "devops-k8",
-              "size": 10
-            }
-          ]
+          "title": "Docker",
+          "description": "Dalsze usprawnienia pracy z kontenerami. Testy, multi-repo, kubernetes?",
+          "id": "devops-Docker"
         },
         {
-          "name": "Ci/Cd",
+          "name": "CI/CD",
           "id": "devops-ci-cd",
           "children": [
             {
-              "name": "Przygotować pilotażowo 'wspólne api-dev dla frontendów'",
+              "name": "Common API",
+              "title": "Common front API",
+              "description": "Pilotażowe 'wspólne api-dev dla frontendów'.",
               "id": "devops-devlocal",
               "size": 10
             },
             {
-              "name": "POC: Jenkins Pipeline",
-              "id": "devops-pipe",
-              "size": 10
-            },
-            {
-              "name": "Jenkins ma jedno zadanie do odpalania testów na Codeception + Node",
-              "id": "devops-jnk-test",
-              "size": 10
-            },
-            {
-              "name": "Jak wersjonować nasze job’y?",
-              "id": "devops-ver",
-              "size": 10
-            },
-            {
-              "name": "Jenkins potrafi szybko się przygotować do odpalania testów nowego projektu.",
-              "id": "devops-auto-test",
+              "name": "Jenkins",
+              "description": "Pipeline? Wersjonowanie jobów. Know-how tworzenie i utrzymanie jobów.",
+              "id": "devops-jenkins",
               "size": 10
             }
           ]
         },
         {
-          "name": "Budowniczy Frontendu",
+          "name": "Builder",
+          "title": "Budowniczy Frontendu",
+          "description": "Być może dobrym pomysłem jest stworzyć usługę budowania Gastby'ego? Albo za nią płacić?",
           "id": "devops-fb",
           "size": 10
         }
@@ -319,35 +291,35 @@
         {
           "name": "API",
           "title": "Lepsze kontrakty / dokumentacja API",
-          "description": "",
+          "description": "Jest prawie pewne, że wdrożymy Hoppscotch'a.",
           "size": 10,
           "id": "t-api"
         },
         {
           "name": "Static Page",
           "title": "Statyczne strony z ADM",
-          "description": "",
+          "description": "Okazało się, że niemal każdy projekt tego potrzebuje (i SEOwcy).",
           "size": 10,
           "id": "t-page"
         },
         {
           "name": "ADM",
           "title": "Nowy panel ADM",
-          "description": "",
+          "description": "Wiemy, że dobrze byłoby go przepisać na ładniejszy i bardziej funkcjonalny. Do zresarchowania czy, jak i kiedy.",
           "size": 10,
           "id": "t-adm"
         },
         {
           "name": "ELK",
           "title": "Kontrola nad logami",
-          "description": "",
+          "description": "Bo warto wiedzieć o krytycznych błędach wcześniej niż klient :-)",
           "size": 10,
           "id": "t-elk"
         },
         {
           "name": "Szkolenia",
           "title": "Szkolenia wewnętrzna",
-          "description": "",
+          "description": "Bo dzielenie się wiedzą niesie wiele korzyści.",
           "size": 10,
           "id": "t-train"
         }
