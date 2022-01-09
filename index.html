@@ -144,8 +144,7 @@
 
     const level0 = newSlajd.filter(function (d) {
         const item = d.depth === 0 ? d : null
-      console.log("level0",d, item)
-      return item;
+        return item;
       }
     )
 
@@ -264,6 +263,14 @@
     }
   }
 
+  function markActiveSlice(elD) {
+    console.log("markActiveSlice", elD)
+    svg.selectAll('.slice')
+      .each(function (d) {
+        d3.select(this).classed('active', d === elD)
+      })
+  }
+
   Reveal.initialize({
     hash: true,
     embedded: false
@@ -280,17 +287,19 @@
       const node = nodes.find(node => {
         return node.__data__.data.id === targetId
       })
-      console.log("node",node.__data__)
-      if(node.__data__.depth === 0){
+
+      markActiveSlice(node.__data__)
+
+      if (node.__data__.depth === 0) {
         target = node.__data__
       }
 
-      if(node.__data__.depth === 2){
+      if (node.__data__.depth === 2) {
         target = node.__data__.parent
       }
     }
 
-    if(target !== null) {
+    if (target !== null) {
       focusOn(target);
     }
   });

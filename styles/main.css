@@ -41,7 +41,7 @@ svg{
   stroke-width: 5px;
   transition: opacity 200ms;
 }
-
+.slice.active .main-arc,
 .slice .main-arc:hover {
   opacity: 0.6
 }
