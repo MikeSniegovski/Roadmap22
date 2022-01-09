@@ -4,54 +4,63 @@
   "id": "first",
   "children": [
     {
-      "name": "Backend",
       "class": "backend",
+      "name": "Backend",
       "title": "Backend",
-      "description": "bla bla",
+      "description": "Jest kilka pomysłów, co by tu zrobić, aby było lepiej.",
+      "image": "images/idea.png",
       "id": "b-backend",
       "children": [
         {
           "name": "Testy",
-          "size": 10,
           "title": "Testy automatyczne",
           "description": "bla bla",
           "image": "./images/trollface.png",
+          "size": 10,
           "id": "b-test"
         },
         {
           "name": "PHP 8",
-          "size": 10,
           "title": "Migracja na PHP 8",
           "description": "Named Parameters, Attributes, Constructor Properties, Union Types, Null-safe Operator, match",
           "image": "./images/lol-face.png",
+          "size": 10,
           "id": "b-php8"
         },
         {
           "name": "Architektura",
+          "title": "Architektura",
+          "description": "",
           "id": "b-arch",
+          "size": 10,
           "children": [
             {
-              "name": "CORE redesign",
+              "name": "CORE",
+              "title": "CORE redesign",
+              "description": "",
               "size": 15,
-              "id": "0"
+              "id": "b-core"
             },
             {
               "name": "Standaryzacja",
               "title": "Standaryzacja usług, repozytoriów, procesorów, CRUD'a...",
+              "description": "",
               "size": 15,
-              "id": "1"
+              "id": "b-std"
             }
           ]
         },
         {
           "name": "Yii3",
           "title": "Yii3 framework",
+          "description": "Nowa koncepcja/architektura. Czy, jak i które pakiety chcemy i możemy wykorzystać w naszych projektach?",
           "size": 10,
           "id": "b-yii3"
         },
         {
           "name": "Cloud?",
           "title": "Spojrzeć w chmury?",
+          "description": "Może warto choć liznąć integrację z CloudFlare przy pierwszej byle okazji? :-)",
           "size": 5,
           "id": "b-cloud"
         },
@@ -327,30 +336,35 @@
         {
           "name": "API",
           "title": "Lepsze kontrakty / dokumentacja API",
+          "description": "",
           "size": 10,
           "id": "t-api"
         },
         {
           "name": "Static Page",
           "title": "Statyczne strony z ADM",
+          "description": "",
           "size": 10,
           "id": "t-page"
         },
         {
           "name": "ADM",
           "title": "Nowy panel ADM",
+          "description": "",
           "size": 10,
           "id": "t-adm"
         },
         {
           "name": "ELK",
           "title": "Kontrola nad logami",
+          "description": "",
           "size": 10,
           "id": "t-elk"
         },
         {
           "name": "Szkolenia",
           "title": "Szkolenia wewnętrzna",
+          "description": "",
           "size": 10,
           "id": "t-train"
         }
