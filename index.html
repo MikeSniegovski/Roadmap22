@@ -224,6 +224,11 @@
           .text(d => {
             return d.description || ""
           });
+
+        level2.append("img")
+          .attr('src', d => {
+            return d.image || null
+          })
       }
     })
 
@@ -253,6 +258,11 @@
           .text(d => {
             return d.description || ""
           });
+
+        level3.append("img")
+          .attr('src', d => {
+            return d.image || null
+          })
       }
     })
 

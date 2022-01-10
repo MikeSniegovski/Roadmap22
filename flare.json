@@ -44,7 +44,8 @@
               "title": "CORE redesign",
               "description": "Zmniejszenie zależności aby ułatwić development modułów. Bardziej rużywaćlny kod.",
               "size": 15,
-              "id": "b-core"
+              "id": "b-core",
+              "image": "./images/trollface.png"
             },
             {
               "name": "Std",
