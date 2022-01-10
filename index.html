@@ -21,14 +21,14 @@
             <h1>RoadMap 2022</h1>
         </section>
         <section class="slajd">
-            <h1>Zmiany... zamiany...</h1>
+            <h1>Zmiany... zmiany...</h1>
         </section>
 
     </div>
 </div>
 <script>
-  const width = window.innerHeight - 40,
-    height = window.innerHeight - 40,
+  const height = window.innerHeight - 200,
+    width = height,
     maxRadius = (Math.min(width, height) / 2) - 15;
 
   const formatNumber = d3.format(',d');
@@ -97,7 +97,8 @@
       .append('g')
       .attr('class', d => {
         const cssClass = d.data.class || d.parent?.data.class || d.parent?.parent?.data.class || ""
-        return `slice ${cssClass}`
+        const depthClass = `depth-${d.depth}`
+        return `slice ${cssClass} ${depthClass}`
       })
       .on('click', d => {
         d3.event.stopPropagation();
@@ -133,7 +134,6 @@
       .attr('startOffset', '50%')
       .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
       .text(d => d.data.name)
-      .style('font-size', '20px');
 
     const reveal = d3.select('.slides')
 
@@ -142,10 +142,7 @@
 
     const newSlajd = slajd.enter()
 
-    const level0 = newSlajd.filter(function (d) {
-        const item = d.depth === 0 ? d : null
-        return item;
-      }
+    const level0 = newSlajd.filter(d => d.depth === 0
     )
 
     level0
@@ -174,6 +171,11 @@
         const cssClass = d.data.class || ""
         return `slajd depth1 ${cssClass}`
       })
+      .append("section")
+      .attr('class', d => {
+        const cssClass = d.data.class || ""
+        return `slajd depth1-root ${cssClass}`
+      })
       .attr('id', d => {
         return d.data.id || null
       })
@@ -196,34 +198,65 @@
         return d.data.image || null
       })
 
-    d3.selectAll('.depth1').each(function (p, j) {
-      const level2 = d3.select(this)
-        .selectAll('section')
-        .data(p.data.children)
-        .enter()
-        .append("section")
-        .attr('class', d => {
-          return `slajd depth2`
-        })
-        .attr('id', d => {
-          return d.id || null
-        });
+    d3.selectAll('.depth1').each(function (p) {
+      if (p.data.children) {
+        const level2 = d3.select(this)
+          .selectAll('.depth2')
+          .data(p.data.children)
+          .enter()
+          .append("section")
+          .attr('class', d => {
+            return `slajd depth2`
+          })
+          .attr('id', d => {
+            return d.id || null
+          });
 
-      level2
-        .append("h2")
-        .attr("class", "v-title")
-        .text(d => {
-          return d.title
-        });
+        level2
+          .append("h2")
+          .attr("class", "v-title")
+          .text(d => {
+            return d.title
+          });
 
-      level2.append('p')
-        .attr("class", "v-desc")
-        .text(d => {
-          return d.description || ""
-        });
-
-
+        level2.append('p')
+          .attr("class", "v-desc")
+          .text(d => {
+            return d.description || ""
+          });
+      }
     })
+
+    d3.selectAll('.depth2').each(function (p) {
+      if (p.children) {
+        const level3 = d3.select(this)
+          .selectAll('.fragment')
+          .data(p.children)
+          .enter()
+          .append("div")
+          .attr('class', d => {
+            return `fragment fade-up`
+          })
+          .attr('id', d => {
+            return d.id || null
+          });
+
+        level3
+          .append("h3")
+          .attr("class", "f-title")
+          .text(d => {
+            return d.title
+          });
+
+        level3.append('p')
+          .attr("class", "f-desc")
+          .text(d => {
+            return d.description || ""
+          });
+      }
+    })
+
+
   });
 
   function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
@@ -264,7 +297,6 @@
   }
 
   function markActiveSlice(elD) {
-    console.log("markActiveSlice", elD)
     svg.selectAll('.slice')
       .each(function (d) {
         d3.select(this).classed('active', d === elD)
@@ -294,7 +326,7 @@
         target = node.__data__
       }
 
-      if (node.__data__.depth === 2) {
+      if (node.__data__.depth === 2 || node.__data__.depth === 1) {
         target = node.__data__.parent
       }
     }

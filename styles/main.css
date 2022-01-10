@@ -9,10 +9,17 @@ body {
 svg{
   font-family: sans-serif;
 }
+.reveal h1{
+--r-heading1-size:2em
+}
 
-/*.h-title{*/
-/*  font-size: 6vw;*/
-/*}*/
+.reveal h2{
+  --r-heading1-size:1.2em
+}
+
+.reveal h3{
+  --r-heading1-size:1em
+}
 /*.h-desc{*/
 /*  font-size: 4vw;*/
 /*}*/
@@ -60,6 +67,16 @@ svg{
 .slice.design text,
 .slice.team text {
   fill: #000
+}
+
+.slice.depth-1 text{
+  font-size: 16px;
+}
+.slice.depth-2 text{
+  font-size: 14px;
+}
+.slice.depth-3 text{
+  font-size: 14px;
 }
 
 .slice text {

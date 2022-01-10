@@ -93,13 +93,13 @@
           "children": [
             {
               "name": "Jest.js",
-              "tile": "Jest.js",
+              "title": "Jest.js",
               "id": "f-jest",
               "size": 10
             },
             {
               "name": "Storybook",
-              "tile": "Storybook",
+              "title": "Storybook",
               "id": "f-Storybook",
               "size": 10
             },
@@ -110,7 +110,8 @@
               "size": 10
             },
             {
-              "name": "Testowanie Reduxa",
+              "name": "Redux",
+              "title": "Testowanie Reduxa",
               "id": "f-tr",
               "size": 10
             }
@@ -122,28 +123,33 @@
           "id": "f-err",
           "children": [
             {
-              "name": "ErrorBoundary",
-              "id": "f-err-br",
-              "size": 10
-            },
-            {
-              "name": "Domyślny obrazek po stronie Gatsbiego",
-              "id": "f-defimg",
-              "size": 10
-            },
-            {
-              "name": "logowanie błędów",
-              "id": "f-er-log",
-              "size": 10
-            },
-            {
-              "name": "Raport z najczęstszymi błędami",
+              "name": "Raport",
+              "title": "Raport z najczęstszymi błędami",
               "id": "f-er-rap",
               "size": 10
             },
             {
-              "name": "Metody przechwytywania błędów",
+              "name": "ErrorBoundary",
+              "title": "ErrorBoundary",
+              "id": "f-err-br",
+              "size": 10
+            },
+            {
+              "name": "Metody",
+              "title": "Metody przechwytywania błędów",
               "id": "f-er-meth",
+              "size": 10
+            },
+            {
+              "name": "Obrazek",
+              "title": "Domyślny obrazek po stronie Gatsbiego",
+              "id": "f-defimg",
+              "size": 10
+            },
+            {
+              "name": "Logowanie",
+              "title": "logowanie błędów",
+              "id": "f-er-log",
               "size": 10
             }
           ]
@@ -154,22 +160,26 @@
           "id": "f-core",
           "children": [
             {
-              "name": "Gatsby themes",
-              "id": "f-themes",
-              "size": 10
-            },
-            {
               "name": "Lista pakietów",
+              "title": "Lista pakietów",
               "id": "f-packets",
               "size": 10
             },
             {
               "name": "Verdaccio",
+              "title": "Verdaccio - prywatny rejestr",
               "id": "f-Verdaccio",
               "size": 10
             },
             {
+              "name": "Gatsby themes",
+              "title": "Gatsby themes",
+              "id": "f-themes",
+              "size": 10
+            },
+            {
               "name": "Automatyzacja",
+              "title": "Automatyzacja",
               "id": "f-auto",
               "size": 10
             }
@@ -178,6 +188,7 @@
         {
           "name": "Next.js",
           "title": "Next.js",
+          "description": "Gatsbiego umiemy. Czas na kolejny kawałek układanki.",
           "id": "f-next",
           "size": 10
         },
@@ -192,6 +203,7 @@
     },
     {
       "name": "UX/UI",
+      "title": "Lepsze projektowanie",
       "class": "design",
       "id": "d-design",
       "children": [
@@ -213,6 +225,7 @@
     },
     {
       "name": "DevOps",
+      "title": "DevOps",
       "class": "devops",
       "id": "d-devops",
       "children": [
@@ -220,10 +233,12 @@
           "name": "Docker",
           "title": "Docker",
           "description": "Dalsze usprawnienia pracy z kontenerami. Testy, multi-repo, kubernetes?",
-          "id": "devops-Docker"
+          "id": "devops-Docker",
+          "size": 10
         },
         {
           "name": "CI/CD",
+          "title": "CI/CD",
           "id": "devops-ci-cd",
           "children": [
             {
@@ -252,30 +267,36 @@
     },
     {
       "name": "Ekspansja",
+      "title": "Powiększanie zespołu",
       "class": "expand",
       "id": "e-expand",
       "children": [
         {
-          "name": "OnBoarding dla Pretendenta",
+          "name": "OnBoarding",
+          "title": "OnBoarding dla Pretendenta",
           "id": "e-onb",
           "size": 10
         },
         {
-          "name": "Employer Branding",
+          "name": "EB",
+          "title": "Employer Branding",
           "id": "e-eb",
           "children": [
             {
-              "name": "Lista technologii dla nowych ludzi",
+              "name": "Technologie",
+              "title": "Lista technologii dla nowych ludzi",
               "id": "e-eb-techlist",
               "size": 10
             },
             {
-              "name": "Ścieżka dla Juniora",
+              "name": "Ścieżka",
+              "title": "Ścieżka dla Juniora",
               "id": "e-eb-path",
               "size": 10
             },
             {
               "name": "Blog",
+              "title": "Kilka artykułów",
               "id": "e-eb-blog",
               "size": 10
             }
@@ -285,6 +306,7 @@
     },
     {
       "name": "Team",
+      "title": "Cos dla wszystkich",
       "class": "team",
       "id": "t-team",
       "children": [
@@ -327,8 +349,8 @@
     },
     {
       "name": "Sporo do zrobienia",
-      "class": "backend",
       "title": "Sporo do zrobienia",
+      "description": "Ale będzie na to czas...",
       "id": "first"
     }
   ]
