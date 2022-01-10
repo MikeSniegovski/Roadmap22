@@ -14,22 +14,19 @@ svg{
 }
 
 .reveal h2{
-  --r-heading1-size:1.2em
+  --r-heading2-size:1.2em
 }
 
 .reveal h3{
-  --r-heading1-size:1em
+  --r-heading3-size:1em
 }
-/*.h-desc{*/
-/*  font-size: 4vw;*/
-/*}*/
-
-/*.v-title{*/
-/*  font-size: 4vw;*/
-/*}*/
-/*.v-desc{*/
-/*  font-size: 2vw;*/
-/*}*/
+.f-desc{
+  font-size: 0.8em;
+  margin: 0 0 1em;
+}
+.v-desc{
+  font-size: 0.8em;
+}
 
 .reveal {
   width: 50%;
@@ -50,7 +47,7 @@ svg{
 }
 .slice.active .main-arc,
 .slice .main-arc:hover {
-  opacity: 0.6
+  opacity: 0.4
 }
 
 .slice.backend .main-arc {
