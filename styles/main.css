@@ -44,6 +44,10 @@ svg{
   max-height: 100vh;
 }
 
+#end .h-title{
+  font-size: 4em;
+}
+
 .slice {
   cursor: pointer;
 }
@@ -59,15 +63,29 @@ svg{
 }
 
 
+.slice.backend .main-arc {
+  fill: rgb(229, 31, 126)
+}
 
-.slice.devops text,
+.slice.frontend .main-arc {
+  fill: #fdbd39
+}
+
+.slice.devops .main-arc,
+.slice.team .main-arc{
+  fill: #34e3e8
+}
+.slice.expand .main-arc,
+.slice.design .main-arc{
+  fill: #4a0ead
+}
 .slice.expand text,
 .slice.backend text {
   fill: #fff
 }
 
 .slice.frontend text,
-.slice.design text,
+.slice.devops text,
 .slice.team text {
   fill: #000
 }
@@ -80,30 +98,6 @@ svg{
 }
 .slice.depth-3 text{
   font-size: 14px;
-}
-
-.slice.backend .main-arc {
-  fill: rgb(229, 31, 126)
-}
-
-.slice.expand .main-arc{
-  fill: #4a0ead
-}
-
-.slice.frontend .main-arc {
-  fill: #fdbd39
-}
-
-.slice.design .main-arc{
-  fill: #34e3e8
-}
-
-.slice.team .main-arc{
-  fill: #34e3e8
-}
-
-.slice.devops .main-arc{
-  fill: #4a0ead
 }
 
 .slice .hidden-arc {

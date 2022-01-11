@@ -388,6 +388,12 @@
       "title": "\uD83D\uDD25 FireDay \uD83D\uDCA1",
       "description": "Czyli co piątek ruszamy z R&D.",
       "id": "first"
+    },
+    {
+      "name": "FireDay",
+      "title": "\uD83D\uDD96",
+      "description": "Niespodziewanka + Quiz",
+      "id": "end"
     }
   ]
 }
