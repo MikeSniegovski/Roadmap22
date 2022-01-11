@@ -11,6 +11,81 @@
       "id": "second"
     },
     {
+      "name": "Team",
+      "title": "Coś dla wszystkich",
+      "class": "team",
+      "id": "t-team",
+      "children": [
+        {
+          "name": "API",
+          "title": "Lepsze kontrakty / dokumentacja API",
+          "description": "Jest prawie pewne, że wdrożymy Hoppscotch'a.",
+          "size": 10,
+          "id": "t-api"
+        },
+        {
+          "name": "Static",
+          "title": "Statyczne strony z ADM",
+          "description": "Okazało się, że niemal każdy projekt tego potrzebuje (a najbardziej SEOwcy 😉).",
+          "size": 10,
+          "id": "t-page"
+        },
+        {
+          "name": "ADM",
+          "title": "Nowy panel ADM",
+          "description": "Wiemy, że dobrze byłoby go przepisać na ładniejszy i bardziej funkcjonalny. Do zresarchowania czy, jak i kiedy.",
+          "size": 10,
+          "id": "t-adm"
+        },
+        {
+          "name": "ELK",
+          "title": "Kontrola nad logami",
+          "description": "Bo warto wiedzieć o krytycznych błędach wcześniej niż klient :-)",
+          "image": "./images/trollface.png",
+          "size": 10,
+          "id": "t-elk"
+        },
+        {
+          "name": "Szkolenia",
+          "title": "Szkolenia wewnętrzne",
+          "description": "Bo dzielenie się wiedzą niesie wiele korzyści.",
+          "size": 10,
+          "id": "t-train"
+        }
+      ]
+    },
+    {
+      "name": "UX/UI",
+      "title": "Lepsze projektowanie",
+      "description": "Zauważalną ilość energii pożerają niespójności już na etapie projektów graficznych. Sporo czasu i nerwów zaoszczędzimy jeśli zaistnieje proces projektowania UX.",
+      "class": "design",
+      "id": "d-design",
+      "children": [
+        {
+          "name": "Now",
+          "title": "UX Design obecnie",
+          "image": "./images/ux.png",
+          "id": "d-ux-now",
+          "size": 10
+        },
+        {
+          "name": "Future",
+          "title": "UX Design w przyszłości",
+          "image": "./images/ux-future.png",
+          "id": "d-ux-future",
+          "size": 10
+        },
+        {
+          "name": "Style Guide",
+          "title": "Style Guide",
+          "description": "Gotowe klocki dla Frotendu/Grafików",
+          "image": "./images/lego.gif",
+          "id": "d-sg",
+          "size": 10
+        }
+      ]
+    },
+    {
       "class": "backend",
       "name": "Backend",
       "title": "Backend",
@@ -82,101 +157,6 @@
           "description": "Może warto choć liznąć integrację z CloudFlare przy pierwszej byle okazji? :-)",
           "size": 5,
           "id": "b-cloud"
-        }
-      ]
-    },
-    {
-      "name": "DevOps",
-      "title": "DevOps",
-      "class": "devops",
-      "id": "d-devops",
-      "children": [
-        {
-          "name": "Docker",
-          "title": "Docker",
-          "description": "Dalsze usprawnienia pracy z kontenerami. Testy, multi-repos, kubernetes?",
-          "id": "devops-Docker",
-          "size": 10
-        },
-        {
-          "name": "CI/CD",
-          "title": "CI/CD",
-          "id": "devops-ci-cd",
-          "children": [
-            {
-              "name": "Common API",
-              "title": "Common front API",
-              "description": "Pilotażowe 'wspólne api-dev dla frontendów'.",
-              "id": "devops-devlocal",
-              "size": 10
-            },
-            {
-              "name": "Jenkins",
-              "title": "Jenkins",
-              "description": "Pipeline? Wersjonowanie jobów. Pilnowanie testów. Know-how tworzenia i utrzymania jobów.",
-              "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/742px-Jenkins_logo.svg.png",
-              "id": "devops-jenkins",
-              "size": 10
-            }
-          ]
-        },
-        {
-          "name": "Builder",
-          "title": "Budowniczy Frontendu",
-          "description": "Być może dobrym pomysłem jest stworzyć usługę budowania Gastby'ego? Albo za nią płacić?",
-          "id": "devops-fb",
-          "size": 10
-        },
-        {
-          "name": "Serwery",
-          "title": "Zwalić więcej na BlackRack",
-          "description": "Coraz więcej odpowiedzialności kierujemy na BlackRack (Dominika). Ma to odciążyć zespół Backend od prac typowo DevOps'owych.",
-          "id": "devops-black",
-          "size": 10
-        }
-      ]
-    },
-    {
-      "name": "Team",
-      "title": "Coś dla wszystkich",
-      "class": "team",
-      "id": "t-team",
-      "children": [
-        {
-          "name": "API",
-          "title": "Lepsze kontrakty / dokumentacja API",
-          "description": "Jest prawie pewne, że wdrożymy Hoppscotch'a.",
-          "size": 10,
-          "id": "t-api"
-        },
-        {
-          "name": "Static",
-          "title": "Statyczne strony z ADM",
-          "description": "Okazało się, że niemal każdy projekt tego potrzebuje (a najbardziej SEOwcy 😉).",
-          "size": 10,
-          "id": "t-page"
-        },
-        {
-          "name": "ADM",
-          "title": "Nowy panel ADM",
-          "description": "Wiemy, że dobrze byłoby go przepisać na ładniejszy i bardziej funkcjonalny. Do zresarchowania czy, jak i kiedy.",
-          "size": 10,
-          "id": "t-adm"
-        },
-        {
-          "name": "ELK",
-          "title": "Kontrola nad logami",
-          "description": "Bo warto wiedzieć o krytycznych błędach wcześniej niż klient :-)",
-          "image": "./images/trollface.png",
-          "size": 10,
-          "id": "t-elk"
-        },
-        {
-          "name": "Szkolenia",
-          "title": "Szkolenia wewnętrzne",
-          "description": "Bo dzielenie się wiedzą niesie wiele korzyści.",
-          "size": 10,
-          "id": "t-train"
         }
       ]
     },
@@ -306,32 +286,52 @@
       ]
     },
     {
-      "name": "UX/UI",
-      "title": "Lepsze projektowanie",
-      "description": "Zauważalną ilość energii pożerają niespójności już na etapie projektów graficznych. Sporo czasu i nerwów zaoszczędzimy jeśli zaistnieje proces projektowania UX.",
-      "class": "design",
-      "id": "d-design",
+      "name": "DevOps",
+      "title": "DevOps",
+      "class": "devops",
+      "id": "d-devops",
       "children": [
         {
-          "name": "Now",
-          "title": "UX Design obecnie",
-          "image": "./images/ux.png",
-          "id": "d-ux-now",
+          "name": "Docker",
+          "title": "Docker",
+          "description": "Dalsze usprawnienia pracy z kontenerami. Testy, multi-repos, kubernetes?",
+          "id": "devops-Docker",
           "size": 10
         },
         {
-          "name": "Future",
-          "title": "UX Design w przyszłości",
-          "image": "./images/ux-future.png",
-          "id": "d-ux-future",
+          "name": "CI/CD",
+          "title": "CI/CD",
+          "id": "devops-ci-cd",
+          "children": [
+            {
+              "name": "Common API",
+              "title": "Common front API",
+              "description": "Pilotażowe 'wspólne api-dev dla frontendów'.",
+              "id": "devops-devlocal",
+              "size": 10
+            },
+            {
+              "name": "Jenkins",
+              "title": "Jenkins",
+              "description": "Pipeline? Wersjonowanie jobów. Pilnowanie testów. Know-how tworzenia i utrzymania jobów.",
+              "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/742px-Jenkins_logo.svg.png",
+              "id": "devops-jenkins",
+              "size": 10
+            }
+          ]
+        },
+        {
+          "name": "Builder",
+          "title": "Budowniczy Frontendu",
+          "description": "Być może dobrym pomysłem jest stworzyć usługę budowania Gastby'ego? Albo za nią płacić?",
+          "id": "devops-fb",
           "size": 10
         },
         {
-          "name": "Style Guide",
-          "title": "Style Guide",
-          "description": "Gotowe klocki dla Frotendu/Grafików",
-          "image": "./images/lego.gif",
-          "id": "d-sg",
+          "name": "Serwery",
+          "title": "Zwalić więcej na BlackRack",
+          "description": "Coraz więcej odpowiedzialności kierujemy na BlackRack (Dominika). Ma to odciążyć zespół Backend od prac typowo DevOps'owych.",
+          "id": "devops-black",
           "size": 10
         }
       ]
