@@ -36,6 +36,14 @@ svg{
   width: 50%;
 }
 
+.slajd img{
+  max-height: 30vh;
+}
+#d-ux-future.slajd img,
+#d-ux-now.slajd img{
+  max-height: 100vh;
+}
+
 .slice {
   cursor: pointer;
 }
@@ -50,9 +58,7 @@ svg{
   opacity: 0.4
 }
 
-.slice.backend .main-arc {
-  fill: rgb(229, 31, 126)
-}
+
 
 .slice.devops text,
 .slice.expand text,
@@ -76,27 +82,27 @@ svg{
   font-size: 14px;
 }
 
-.slice text {
-  fill: #fff
+.slice.backend .main-arc {
+  fill: rgb(229, 31, 126)
 }
 
-.slice .main-arc.expand {
-  fill: #e51f7e
+.slice.expand .main-arc{
+  fill: #4a0ead
 }
 
-.slice .main-arc.frontend {
+.slice.frontend .main-arc {
   fill: #fdbd39
 }
 
-.slice .main-arc.design {
+.slice.design .main-arc{
   fill: #34e3e8
 }
 
-.slice .main-arc.team {
+.slice.team .main-arc{
   fill: #34e3e8
 }
 
-.slice .main-arc.devops {
+.slice.devops .main-arc{
   fill: #4a0ead
 }
 
@@ -108,4 +114,5 @@ svg{
   pointer-events: none;
   dominant-baseline: middle;
   text-anchor: middle;
+  fill: #fff
 }

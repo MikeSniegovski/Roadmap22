@@ -23,7 +23,7 @@
         <section class="slajd">
             <h1>Zmiany... zmiany...</h1>
             <p>
-                Przeszliśmy daleką drogę i nauczyliśmy się lepiej planować i projektować rzeczy :)
+                Przeszliśmy daleką drogę i nauczyliśmy się lepiej planować i projektować rzeczy 😁
             </p>
         </section>
 
@@ -107,9 +107,8 @@
         d3.event.stopPropagation();
         focusOn(d);
         let path = `#/${d.data.id}`
-
-        if (d.data.level === 3) {
-          path = `#/${d.parent.id}/${d.data.id}`
+        if (d.depth === 3) {
+          path = `#/${d.parent.data.id}/${d.data.id}`
         }
         window.location.hash = path
       });
@@ -318,15 +317,25 @@
 
   Reveal.initialize({
     hash: true,
-    embedded: false
+    embedded: false,
+    width: 960,
+    height: 960,
   });
 
-  Reveal.on('slidechanged', event => {
-    let target = null
-    const currentSlide = event.currentSlide.__data__
-    const targetId = currentSlide.data?.id || currentSlide.id
-    const nodes = globalData._enter[0]
+  Reveal.on( 'fragmenthidden', event => {
+    const targetId = event.fragment.__data__.id
+    focusFromReveal(targetId)
+  } );
 
+  Reveal.on( 'fragmentshown', event => {
+    const targetId = event.fragment.__data__.id
+    focusFromReveal(targetId)
+  } );
+
+  const focusFromReveal = (targetId) => {
+    let target = null
+
+    const nodes = globalData._enter[0]
     if (targetId && Array.isArray(nodes)) {
 
       const node = nodes.find(node => {
@@ -347,6 +356,12 @@
     if (target !== null) {
       focusOn(target);
     }
+  }
+
+  Reveal.on('slidechanged', event => {
+    const currentSlide = event.currentSlide.__data__
+    const targetId = currentSlide.data?.id || currentSlide.id
+    focusFromReveal(targetId)
   });
 </script>
 </body>
