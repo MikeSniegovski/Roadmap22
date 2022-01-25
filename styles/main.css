@@ -62,7 +62,7 @@ svg{
   opacity: 0.4
 }
 
-
+.slice.devops .main-arc,
 .slice.backend .main-arc {
   fill: rgb(229, 31, 126)
 }
@@ -71,7 +71,6 @@ svg{
   fill: #fdbd39
 }
 
-.slice.devops .main-arc,
 .slice.team .main-arc{
   fill: #34e3e8
 }
@@ -80,12 +79,12 @@ svg{
   fill: #4a0ead
 }
 .slice.expand text,
+.slice.devops text,
 .slice.backend text {
   fill: #fff
 }
 
 .slice.frontend text,
-.slice.devops text,
 .slice.team text {
   fill: #000
 }

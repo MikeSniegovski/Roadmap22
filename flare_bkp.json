@@ -337,6 +337,47 @@
       ]
     },
     {
+      "name": "Ekspansja",
+      "title": "Powiększanie zespołu",
+      "class": "expand",
+      "id": "e-expand",
+      "children": [
+        {
+          "name": "OnBoarding",
+          "title": "OnBoarding dla Pretendenta",
+          "description": "Jeśli będzie nas więcej to fajnie było by mieć procedurę/automatyzację na wprowadzanie 'Pretendentów' w świat AlterPage.",
+          "id": "e-onb",
+          "size": 10
+        },
+        {
+          "name": "EB",
+          "title": "Employer Branding",
+          "description": "Niech wiedzą że tu się dzieją takie rzeczy...\n\n że aż chce się pracować w AP!",
+          "id": "e-eb",
+          "children": [
+            {
+              "name": "Technologie",
+              "title": "Lista technologii dla nowych ludzi",
+              "id": "e-eb-techlist",
+              "size": 10
+            },
+            {
+              "name": "Ścieżka",
+              "title": "Ścieżka dla Juniora",
+              "id": "e-eb-path",
+              "size": 10
+            },
+            {
+              "name": "Blog",
+              "title": "Kilka artykułów",
+              "id": "e-eb-blog",
+              "size": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Sporo do zrobienia",
       "title": "Sporo do zrobienia",
       "description": "Ale będzie na to czas...",
