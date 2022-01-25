@@ -329,8 +329,8 @@
         },
         {
           "name": "Serwery",
-          "title": "Zwalić więcej na BlackRack",
-          "description": "Coraz więcej odpowiedzialności kierujemy na BlackRack (Dominika). Ma to odciążyć zespół Backend od prac typowo DevOps'owych.",
+          "title": "Zwalić więcej na Adminów",
+          "description": "Coraz więcej odpowiedzialności kierujemy na Administratorów. Ma to odciążyć zespół Backend od prac typowo DevOps'owych.",
           "id": "devops-black",
           "size": 10
         }
